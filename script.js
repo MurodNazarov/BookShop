@@ -43,6 +43,27 @@
 //     });
 // }
 
-const container = document.createElement('div')
-document.body.prepend(container)
-container.classList.add('container')
+const app = {
+    addWrapper(){
+        const wrapper = document.createElement('div')
+        document.body.prepend(wrapper)
+        wrapper.classList.add("container")
+    },
+
+    createElement(element,name, className,position){
+        name.document.createElement(element)
+        position.prepend(name)
+        name.classList.add(className)
+    },
+
+    createImg(name, className, position, src) {
+        name = document.createElement('img');
+        position.append(name);
+        name.classList.add(className);
+        name.src = src;
+        name.alt = className;
+    },
+
+    
+
+}
