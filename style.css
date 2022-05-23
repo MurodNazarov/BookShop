@@ -1,0 +1,118 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* General Styles */
+header{
+    padding: 20px 0;
+    background-color: #eee;
+}
+main{
+    padding: 20px 0;
+}
+
+.container{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding:0 10px;
+}
+
+.flex{
+    display: flex;
+}
+.flex-col{
+    flex-direction: column;
+}
+.flex-row{
+    flex-direction: row;
+}
+.justify-center{
+    justify-content: center;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+.align-center{
+    align-items: center;
+}
+
+/* Header-Style */
+
+.logo img{
+    width: 34px;
+    height: 34px;
+}
+.logo p{
+    font-size: 2.5rem;
+    margin-left: 5px;
+    font-weight: 700;
+}
+.input-field input{
+padding: 10px 40px;
+    border-radius: 30px;
+    border: none;
+}
+.input-field input[type="text"]{
+    font-size: 1.6rem;
+}
+.input-field input:focus{
+    outline: none;
+}
+
+.input-field img{
+    width: 34px;
+    height: 34px;
+}
+
+.profile a{
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-right: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.profile .shop-card{
+    cursor: pointer;
+}
+.profile .shop-card img{
+    width: 40px;
+    height: 40px;
+}
+.shop-card{
+    position: relative;
+}
+.shop-counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    width: 17px;
+    height: 17px;
+    border-radius: 100%;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+/* Box Style */
+
+
+
+.box-img img{
+    width: 110px;
+    height: 140px;
+}
+.box-text{
+    margin-left: 10px;
+}
+.box-title{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
