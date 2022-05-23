@@ -1,2 +1,2 @@
 # Book-Shop
-https://MurodNazarov.github.io/BookShop/
+https://MurodNazarov.github.io/BookShop
