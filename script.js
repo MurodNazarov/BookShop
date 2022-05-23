@@ -1,4 +1,6 @@
 const boxWrapper = document.querySelector(".box-wrapper")
+const btn = document.querySelector(".btn")
+const shopCounter = document.querySelector(".shop-counter")
 
 const booksData = './data.json'
 
@@ -18,52 +20,64 @@ function showBooks(booksDetails){
     booksDetails.forEach(bookDetail => {
         const {author, title, imageLink, price,description} = bookDetail
 
-        // console.log(author, title, imageLink, price,description)
-        const booksEl = document.createElement("div")
-        booksEl.classList.add("box")
+        const mainBox = document.createElement('div')
+        mainBox.classList.add('box')
+        boxWrapper.appendChild(mainBox)
 
-        booksEl.innerHTML = `
-            <div class="box-img">
-              <img src="${imageLink}" alt="">
-            </div>
-            <div class="box-text">
-                <div class="box-title">${title}</div>
-                <div class="box-author" >${author}</div>
-                <div class="box-desc">${description}</div>
-                <div class="box-price">${price} $</div>
-                <div class="btns flex justify-between align-center">
-                    <p class="show" >Show More</p>
-                    <button class="btn" >
-                        Add To Card
-                    </button>
-                </div>
-            </div>
-        `
-        boxWrapper.appendChild(booksEl)
+        const boxImg = document.createElement('div')
+        boxImg.classList.add('box-img')
+        const img = document.createElement('img')
+        img.setAttribute('src', imageLink)
+        img.setAttribute('alt', title);
+        boxImg.prepend(img)
+        mainBox.appendChild(boxImg)
+        
+
+        const boxText = document.createElement('div')
+        boxText.classList.add('box-text')
+        mainBox.appendChild(boxText)
+
+        const btnBox = document.createElement('div')
+        btnBox.classList.add('btns')
+        boxText.prepend(btnBox)
+
+        const AddToCardBtn = document.createElement('button')
+        AddToCardBtn.classList.add("btn")
+        AddToCardBtn.textContent = 'Add To Card'
+        btnBox.prepend(AddToCardBtn)
+        AddToCardBtn.addEventListener('click', counter)
+
+        const showDetail = document.createElement('p')
+        showDetail.classList.add('show')
+        showDetail.textContent = 'Show More'
+        btnBox.prepend(showDetail)
+
+        const boxPrice = document.createElement('div')
+        boxPrice.classList.add('box-price')
+        boxPrice.textContent = `$ ${price}`
+        boxText.prepend(boxPrice)
+
+        const boxDesc = document.createElement('div')
+        boxDesc.classList.add('box-desc')
+        boxDesc.textContent = description
+        boxText.prepend(boxDesc)
+
+
+        const boxAuthor = document.createElement('div')
+        boxAuthor.classList.add('box-author')
+        boxAuthor.textContent = author
+        boxText.prepend(boxAuthor)
+
+        const boxTitle = document.createElement('div')
+        boxTitle.classList.add('box-title')
+        boxTitle.textContent = title
+        boxText.prepend(boxTitle)
+
     });
 }
 
-// const app = {
-//     addWrapper(){
-//         const wrapper = document.createElement('div')
-//         document.body.prepend(wrapper)
-//         wrapper.classList.add("container")
-//     },
-
-//     createElement(element,name, className,position){
-//         name.document.createElement(element)
-//         position.prepend(name)
-//         name.classList.add(className)
-//     },
-
-//     createImg(name, className, position, src) {
-//         name = document.createElement('img');
-//         position.append(name);
-//         name.classList.add(className);
-//         name.src = src;
-//         name.alt = className;
-//     },
-
-
-
-// }
+let count = 0
+function counter(){
+    count++
+    shopCounter.textContent = count
+}
