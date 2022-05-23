@@ -11,6 +11,10 @@ html{
 header{
     padding: 20px 0;
     background-color: #eee;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 main{
     padding: 20px 0;
@@ -175,4 +179,10 @@ padding: 10px 40px;
 .show{
     font-size: 1.6rem;
     text-decoration: underline;
+}
+
+.btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
